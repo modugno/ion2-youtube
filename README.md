@@ -28,4 +28,5 @@ O Ionic irá executar na porta 8100 do seu navegador.
 Para acessar o aplicativo, acesse o endereço abaixo no seu navegador:
 [http://localhost:8100/ionic-lab](http://localhost:8100/ionic-lab)
 
-
+## 5 - (bonus) Baixe a APK
+Atualmente só tem build para o Android, e esta disponível para [Download clicando Aqui](https://github.com/modugno/ion2-youtube/raw/master/src/APK/android-ion-youtube.apk)
