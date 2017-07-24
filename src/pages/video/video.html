@@ -1,0 +1,58 @@
+<ion-header>
+
+  <ion-navbar color="youtube">
+    <ion-title>{{ videoTitle }}</ion-title>
+  </ion-navbar>
+  
+</ion-header>
+
+<ion-content class="page-video">
+  
+  <div *ngFor="let video of data">
+    
+    <iframe allowfullscreen frameborder="0" height="200" width="100%" [src]="playVideo(videoId)"></iframe>
+
+    <div class="video-details">
+      <h2 class="video-details_title">{{ video.snippet.title }}</h2>
+      <p class="video-details_views">{{ viewCount }} visualizações</p>
+    </div>
+    <hr>
+    
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="dark-light" icon-start>
+          <ion-icon name='thumbs-up'></ion-icon>
+          <p>{{ likeCount }}</p>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button clear small color="dark-light" icon-start>
+          <ion-icon name='thumbs-down'></ion-icon>
+          <p>{{ dislikeCount }}</p>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button clear small color="dark-light" icon-start>
+          <ion-icon name='star'></ion-icon>
+          <p>{{ favoriteCount }}</p>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button clear small color="dark-light" icon-start>
+          <ion-icon name='text'></ion-icon>
+          <p>{{ commentCount }}</p>
+        </button>
+      </ion-col>
+    </ion-row>
+    <hr>
+    <ion-row>
+      <ion-col>
+        <read-more>
+          <p>Publicado em {{ video.snippet.publishedAt | date : 'd/M/y' }}</p>
+          {{ video.snippet.description }}
+        </read-more>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>

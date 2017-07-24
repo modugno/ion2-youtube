@@ -1,0 +1,14 @@
+.read-more {
+    padding: 0 1em;
+    text-align: center;
+
+    &_content {
+        font-size: 1.2em;
+        color: $color-gray;
+        line-height: 1.3em;
+        text-align: left;
+    }
+}
+.isView {
+    display: none;
+}

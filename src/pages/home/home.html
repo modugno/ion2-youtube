@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="youtube">
+    <ion-title>Playlists</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-card *ngFor="let video of datas" (click)="openPlaylist(video.id, video.snippet.title)" class="card-playlist">
+    <img src="{{ video.snippet.thumbnails.medium.url }}" alt="{{ video.snippet.title }}">
+    <ion-card-content>
+      <ion-card-title>
+        # {{ video.snippet.title }}
+      </ion-card-title>
+      <div class="card-subtitle">{{ video.snippet.channelTitle }}</div>
+    </ion-card-content>
+  </ion-card>
+  
+  <!-- load more playlist -->
+  <ion-infinite-scroll (ionInfinite)="infiniteScroll($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  
+</ion-content>

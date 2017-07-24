@@ -1,0 +1,8 @@
+<div class="read-more">
+  <button ion-button clear small color="dark-light" (click)="isView =! isView">
+    {{ isView ? 'Mais' : 'Menos' }} Detalhes
+  </button>
+  <div [class.isView]="isView" class="read-more_content">
+    <ng-content></ng-content>
+  </div>
+</div>

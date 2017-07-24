@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar color="youtube">
+    <ion-title># {{ playlistTitle }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-card *ngFor="let video of datas" (click)="openVideoPage(video.snippet.resourceId.videoId)" class="playlist-page">
+      <ion-row *ngIf="video.snippet.thumbnails">
+        <ion-col col-6 class="playlist-thumb">
+          <img src="{{ video.snippet.thumbnails.medium.url }}" alt="{{ video.snippet.title }}">
+        </ion-col>
+        <ion-col col-6>
+          <div class="playlist-details">
+            <h2 class="playlist-title">{{ video.snippet.title }}</h2>
+            <p class="playlist-subtitle">{{ video.snippet.publishedAt | date: 'd/M/y' }}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+  <!-- load more videos -->
+  <ion-infinite-scroll (ionInfinite)="infiniteScroll($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

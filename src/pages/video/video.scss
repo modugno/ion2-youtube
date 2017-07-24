@@ -1,0 +1,17 @@
+.page-video {
+    position: relative;
+
+    .video-details {
+        padding: 1em;
+
+        &_title {
+            font-size: 1.7em;
+            font-weight: 400;
+        }
+
+        &_views {
+            color: $color-gray;
+            margin-top: -0.3em;
+        }
+    }
+}
