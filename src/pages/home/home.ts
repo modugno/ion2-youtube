@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
 import { NavController, LoadingController } from 'ionic-angular';
 import { Youtube } from '../../providers/youtube';
 import { PlaylistPage } from '../playlist/playlist';
